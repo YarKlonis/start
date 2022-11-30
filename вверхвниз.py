@@ -5,10 +5,8 @@ def caps(pid, ar = string.ascii_lowercase, ast = string.ascii_uppercase):
     for i in range(len(pid)):
         if pid[i] in ar:
             strt += pid[i].swapcase()
-        elif pid[i] in ast:
-            strt += pid[i]
         else:
-            strt += pid[i] #SPACE
+            strt += pid[i] 
     return strt
 
 def down(pid):
