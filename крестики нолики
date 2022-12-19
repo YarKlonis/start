@@ -1,4 +1,4 @@
-!python #недоделано
+!#python #недоделано
 class Board:
     def init(self):
         self.n = 3
