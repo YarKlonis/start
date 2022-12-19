@@ -1,0 +1,49 @@
+!python #недоделано
+class Board:
+    def init(self):
+        self.n = 3
+        self.board = [" "] * 9
+
+    def turn_X(self):
+
+    # * ввести n, m - номера строки, столбца
+    # * n = 2, m = 1 -> 7
+    # * [' ', ' ', 'O', ' ', 'X', ' ', ' ', ' ', ' ']
+    # *  формула n * 3 + m
+    # * нет ли 'O' - если нет, то ставим
+
+    def turn_Y(self):
+        pass
+
+    def check_if_won(self):
+        ls = self.board
+        # проверка 0 строки
+        usl1 = ls[0] == ls[1] and ls[0] == ls[2] and ls[1] != " "  # True или False
+        usl2 = ls[3] == ls[4] and ls[3] == ls[5] and ls[3] != " "
+
+        return usl1 or usl2 or usl3 or ....
+
+    def paint(self):
+        print("".join(self.board[0:3]))
+        print("".join(self.board[3:6]))
+        print("".join(self.board[6:9]))
+
+
+
+board = Board(10)
+print(board.n)  # 3
+print(board.board)
+
+
+
+while True:
+    board.turn_X()
+    board.paint()
+    if board.check_if_won():
+        print("X won")
+        break
+    board.turn_Y()
+    board.paint()
+    if board.check_if_won():
+        print("Y won")
+        break
