@@ -1,0 +1,31 @@
+#!python
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+
+def largest_prime_numbers(n):
+    largest_prime1 = 0
+    largest_prime2 = 0
+    for i in range(2, n + 1):
+        if is_prime(i):
+            if i > largest_prime1:
+                largest_prime2 = largest_prime1
+                largest_prime1 = i
+            elif i > largest_prime2:
+                largest_prime2 = i
+    return (largest_prime1, largest_prime2)
+
+def fibonacci_sequence(n):
+    largest_prime1, largest_prime2 = largest_prime_numbers(n)
+
+    fibonacci = [largest_prime2, largest_prime1]
+    for i in range(15):
+        # print(fibonacci)
+        fibonacci.append(fibonacci[-1] + fibonacci[-2])
+    return fibonacci
+
+print(fibonacci_sequence(int(input())))
