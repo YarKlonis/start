@@ -1,0 +1,13 @@
+#!python
+def st(abc):
+    def result(seq):
+        statistica = {}
+        for j in abc:
+            count = 0
+            for i in seq:
+                if j == i:
+                    count += 1
+            statistica[j] = round(count / len(seq), 3)
+        return statistica
+    return result
+
