@@ -1,16 +1,16 @@
 #(bash)  объединить файлы из задачи 2 в один файл
 
-cat *.fasta > output.fasta
+cat *.fasta > together.fasta
 
 # (bash) для полученного в 4 файлы преобразовать
 # последовательности, чтобы каждая последовательность
 # записывалась в одну строчку или обратно -
 # по 60 символов на строку.
 
-fold -w 60 output.fasta > final.fasta
+fold -w 60 together.fasta > f60.fasta
 
 # (bash) для полученного в 4 файла - для каждой
 # последовательности вывести статистику
 # встречаемости каждой АК (в штуках)
 
-tail -n+2 final.fasta | grep -io "aminoacid" | wc -l
+grep -io "nameofaminoacid"  f60.fasta | wc -l
